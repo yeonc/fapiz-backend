@@ -1,0 +1,57 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sns_posts",
+  "info": {
+    "singularName": "sns-post",
+    "pluralName": "sns-posts",
+    "displayName": "SNSPost",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "author": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "snsPosts"
+    },
+    "postImage": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "content": {
+      "type": "text"
+    },
+    "bookmarkUsers": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "bookmarkedSNSPosts"
+    },
+    "likeUsers": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "likedSNSPosts"
+    },
+    "comments": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::sns-comment.sns-comment",
+      "mappedBy": "post"
+    },
+    "itemInfomation": {
+      "type": "json"
+    }
+  }
+}

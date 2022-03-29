@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sns_comments",
+  "info": {
+    "singularName": "sns-comment",
+    "pluralName": "sns-comments",
+    "displayName": "SNSComment"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "author": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "snsComments"
+    },
+    "content": {
+      "type": "text"
+    },
+    "post": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::sns-post.sns-post",
+      "inversedBy": "comments"
+    }
+  }
+}
