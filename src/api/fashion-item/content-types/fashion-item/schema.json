@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "fashion_items",
+  "info": {
+    "singularName": "fashion-item",
+    "pluralName": "fashion-items",
+    "displayName": "FashionItem",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "category": {
+      "type": "string"
+    },
+    "color": {
+      "type": "string"
+    },
+    "season": {
+      "type": "string"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "owner": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "fashionItems"
+    }
+  }
+}

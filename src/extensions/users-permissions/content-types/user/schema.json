@@ -74,41 +74,6 @@
         "audios"
       ]
     },
-    "gender": {
-      "type": "enumeration",
-      "enum": [
-        "male",
-        "female"
-      ]
-    },
-    "fashonStyle": {
-      "type": "enumeration",
-      "enum": [
-        "casual",
-        "street",
-        "vintage",
-        "chic",
-        "feminine",
-        "sporty",
-        "modern",
-        "luxury",
-        "dandy",
-        "classic",
-        "amekaji",
-        "hipster"
-      ]
-    },
-    "bodyShape": {
-      "type": "enumeration",
-      "enum": [
-        "triangle",
-        "inverted_triangle",
-        "oval",
-        "rectangle",
-        "hourglass",
-        "trapezoid"
-      ]
-    },
     "height": {
       "type": "decimal"
     },
@@ -116,7 +81,7 @@
       "type": "decimal"
     },
     "points": {
-      "type": "biginteger"
+      "type": "integer"
     },
     "level": {
       "type": "integer"
@@ -156,6 +121,21 @@
       "relation": "oneToMany",
       "target": "api::sns-comment.sns-comment",
       "mappedBy": "author"
+    },
+    "fashionStyles": {
+      "type": "json"
+    },
+    "gender": {
+      "type": "string"
+    },
+    "bodyShape": {
+      "type": "string"
+    },
+    "fashionItems": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::fashion-item.fashion-item",
+      "mappedBy": "owner"
     }
   }
 }
