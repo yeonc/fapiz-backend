@@ -86,17 +86,17 @@
     "level": {
       "type": "integer"
     },
-    "following": {
+    "followings": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "plugin::users-permissions.user",
-      "inversedBy": "follower"
+      "inversedBy": "followers"
     },
-    "follower": {
+    "followers": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "plugin::users-permissions.user",
-      "inversedBy": "following"
+      "inversedBy": "followings"
     },
     "snsPosts": {
       "type": "relation",
@@ -136,6 +136,10 @@
       "relation": "oneToMany",
       "target": "api::fashion-item.fashion-item",
       "mappedBy": "owner"
+    },
+    "isHidden": {
+      "type": "boolean",
+      "default": false
     }
   }
 }
