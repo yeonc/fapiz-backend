@@ -136,10 +136,6 @@
       "relation": "oneToMany",
       "target": "api::fashion-item.fashion-item",
       "mappedBy": "owner"
-    },
-    "isHidden": {
-      "type": "boolean",
-      "default": false
     }
   }
 }
